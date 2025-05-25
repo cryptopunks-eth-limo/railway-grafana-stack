@@ -7,7 +7,6 @@ scrape_configs:
       - targets: ["localhost:9090"]
 
   - job_name: "bids-api"
-    scheme: http
     static_configs:
-      - targets: ["bids-api:8087"]
+      - targets: ["bids-api.railway.internal:8087"]
     metrics_path: "/metrics"

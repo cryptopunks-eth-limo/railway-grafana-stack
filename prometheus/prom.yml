@@ -2,6 +2,11 @@ global:
   scrape_interval: 15s # Default scrape interval
 
 scrape_configs:
+  - job_name: "coordinator"
+    static_configs:
+      - targets: ["coordinator:8084"]
+    metrics_path: "/metrics"
+
   - job_name: "bid-monitoring-service"
     static_configs:
       - targets: ["bid-monitoring-service:8088"]

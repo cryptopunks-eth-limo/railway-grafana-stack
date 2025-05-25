@@ -21,3 +21,8 @@ scrape_configs:
     static_configs:
       - targets: ["contract-listener:8080"]
     metrics_path: "/metrics"
+
+  - job_name: "executor"
+    static_configs:
+      - targets: ["executor:8089"]
+    metrics_path: "/metrics"

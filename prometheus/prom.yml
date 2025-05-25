@@ -2,12 +2,17 @@ global:
   scrape_interval: 15s # Default scrape interval
 
 scrape_configs:
+  - job_name: "bid-monitoring-service"
+    static_configs:
+      - targets: ["bid-monitoring-service:8088"]
+    metrics_path: "/metrics"
+
   - job_name: "bids-api"
     static_configs:
       - targets: ["bids-api:8087"]
     metrics_path: "/metrics"
 
-  - job_name: "bid-monitoring-service"
+  - job_name: "contract-listener-service"
     static_configs:
-      - targets: ["bid-monitoring-service:8088"]
+      - targets: ["contract-listener:8086"]
     metrics_path: "/metrics"

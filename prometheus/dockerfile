@@ -2,13 +2,10 @@ ARG VERSION=v3.2.1
 
 FROM prom/prometheus:${VERSION}
 
-# Print the contents of prom.yml
-RUN cat prom.yml
-
 # Copy the prom.yml configuration file to the container
 COPY prom.yml /etc/prometheus/prom.yml
 
-# Print the contents of prom.yml
+# Print the contents of prom.yml after copying
 RUN cat /etc/prometheus/prom.yml
 
 # Command to run Prometheus

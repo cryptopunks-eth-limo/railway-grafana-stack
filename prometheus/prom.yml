@@ -26,3 +26,8 @@ scrape_configs:
     static_configs:
       - targets: ["executor:8089"]
     metrics_path: "/metrics"
+
+  - job_name: "rewards"
+    static_configs:
+      - targets: ["rewards:8090"]
+    metrics_path: "/metrics"
